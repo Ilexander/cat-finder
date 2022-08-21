@@ -20,9 +20,15 @@ function Home({ data }) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
+export async function getStaticProps(context) {
   const res = await fetch("http://localhost:3001/cats");
+  console.log(res);
   const json = await res.json();
-  return { data: json };
-};
+  return {
+    props: {
+      data: json.length ? json : null,
+    }, // will be passed to the page component as props
+  };
+}
+
 export default Home;

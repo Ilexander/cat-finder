@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
                 </Link>
               </li>
               <li className="menu__item menu__item--user">
-                <Link href="/">
+                <Link href="/authorization/registration">
                   <a href="">
                     <Image
                       src="/User.svg"
